@@ -5,11 +5,10 @@ include("fonts.lua")
 
 local BAIL = {}
 
-function BAIL:menu_open(ply, cmd, args)
+function BAIL:menu_open()
     BAIL.frame = vgui.Create("bail_frame")
     BAIL.frame:MakePopup()
 end
-concommand.Add("bail_menu_open", BAIL.menu_open)
 
 function BAIL:net_menu_open(len)
     if ispanel(BAIL.frame) == false or BAIL.frame:IsValid() == false then
